@@ -1,14 +1,13 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 
-const inputField = () => {
+const InputField = (props) => {
     return(
         <TextField
           id={props.id}
           label={props.label}
-          className={classes.textField}
+          // className={classes.textField}
           value={props.val}
         //   onChange={this.handleChange('name')}
           margin="normal"
@@ -17,4 +16,4 @@ const inputField = () => {
     )
 }
 
-export default inputField
+export default InputField

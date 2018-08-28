@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 
-const selectField = () => {
+const SelectField = () => {
     return(
         <Select
             value={props.age}
@@ -22,5 +22,5 @@ const selectField = () => {
     )
 }
 
-export default selectField
+export default SelectField
 
