@@ -24,7 +24,6 @@ class Header extends Component{
                         onChange={this.handleChange}
                         fullWidth
                         indicatorColor="secondary"
-                        backgroundColor= "#3f51b5"
                         textColor="secondary"
                         >
                        <Tab className="tabWidth" icon={<PersonIcon />} label={'Customers'}/>
