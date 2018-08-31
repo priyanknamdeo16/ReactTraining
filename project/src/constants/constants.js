@@ -6,5 +6,6 @@ export default createConstants(
     'ON_CUSTOMERS_UPDATED',
     'ON_CUSTOMERS_DELETED',
     'ON_CUSTOMERS_SELECTED',
-    'ON_CUSTOMERS_ADD_EDIT'
+    'ON_CUSTOMERS_ADD',
+    'ON_TAB_CHANGE'
 );

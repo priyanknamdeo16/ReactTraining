@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PersonIcon from '@material-ui/icons/Person';
 import SettingIcon from '@material-ui/icons/Settings';
+import {Link, withRouter} from 'react-router-dom';
+
 class Header extends Component{
-    state = {
-        value: 0,
-      };
-      handleChange = (event, value) => {
-        this.setState({ value });
-      };
         render(){
             return(
                 <React.Fragment>
@@ -20,15 +17,21 @@ class Header extends Component{
                     <div>
                     <Paper square style={{height: 70}}>
                         <Tabs
-                        value={this.state.value}
-                        onChange={this.handleChange}
+                        value={this.props.tabState}
                         fullWidth
                         indicatorColor="secondary"
                         textColor="secondary"
                         >
-                       <Tab className="tabWidth" icon={<PersonIcon />} label={'Customers'}/>
-                       <Tab className="tabWidth" icon={<SettingIcon />} label={'Settings'}/>
-                       <Tab style={{marginLeft: 920}} label={'LogOut'} />
+                       <Tab className="tabWidth" icon={<PersonIcon />} 
+                                component={Link} to="/customers"
+                                label={'Customers'}>
+                       </Tab>
+                       <Tab className="tabWidth" icon={<SettingIcon />} 
+                            component={Link} to="/settings"
+                            label={'Settings'}>
+                       </Tab>
+                       <Tab label={'LogOut'}>
+                       </Tab>
                         </Tabs>
                     </Paper>
                     </div>
@@ -38,5 +41,8 @@ class Header extends Component{
         }
 }
 
+export const mapStateToProps = (state) => ({
+    tabState : state.tabs.tabIndex
+});
 
-export default Header
+export default withRouter(connect(mapStateToProps, null)(Header));
