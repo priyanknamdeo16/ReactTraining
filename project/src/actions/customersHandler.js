@@ -31,7 +31,7 @@ export const getCustomers = () => {
             });
         });
     };
-}
+};
 
 export const onCustomersSelected = (customer) => {
     return (dispatch, getState) => {
@@ -40,7 +40,7 @@ export const onCustomersSelected = (customer) => {
             payload: customer
         });
     }
-}
+};
 
 export const onFormAdd = () => {
     return (dispatch, getState) => {
@@ -49,4 +49,17 @@ export const onFormAdd = () => {
             payload: true
         });
     }
-}
+};
+export const addEditCustomer = (customer) => {
+    return (dispatch) => {
+  
+      dispatch({type:Constant.ON_CUSTOMER_ADD_EDIT, payload:customer});
+  
+        const customers = [];
+        customers.push(customer.customer);
+        dispatch({
+          type:Constants.ON_CUSTOMERS_RECIEVED,
+          payload:customers
+        });
+    }
+};

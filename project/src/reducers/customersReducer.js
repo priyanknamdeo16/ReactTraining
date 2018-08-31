@@ -17,7 +17,7 @@ export default CreateReducers(initialState, {
     [Constants.ON_CUSTOMERS_SELECTED]: (state, payload) => {
         return Object.assign({}, state, {selectedCustomer: payload})
     },
-    [Constants.ON_CUSTOMERS_ADD]: (state, payload) => {
+    [Constants.ON_CUSTOMER_ADD_EDIT]: (state, payload) => {
         return Object.assign({}, state, {showAddForm: payload, selectedCustomer: null})
     }
 });
