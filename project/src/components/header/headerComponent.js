@@ -6,6 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import PersonIcon from '@material-ui/icons/Person';
 import SettingIcon from '@material-ui/icons/Settings';
 import {Link, withRouter} from 'react-router-dom';
+import RouteConstants from '../../constants/route.constants';
 
 class Header extends Component{
         render(){
@@ -23,11 +24,11 @@ class Header extends Component{
                         textColor="secondary"
                         >
                        <Tab className="tabWidth" icon={<PersonIcon />} 
-                                component={Link} to="/customers"
+                                component={Link} to={RouteConstants.CUSTOMERS_LIST.path}
                                 label={'Customers'}>
                        </Tab>
                        <Tab className="tabWidth" icon={<SettingIcon />} 
-                            component={Link} to="/settings"
+                            component={Link} to={RouteConstants.CUSTOMERS_SETTINGS.path}
                             label={'Settings'}>
                        </Tab>
                        <Tab label={'LogOut'}>

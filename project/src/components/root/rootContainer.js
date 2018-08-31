@@ -21,6 +21,8 @@ class Root extends Component{
                     component={RoutesConstants.CUSTOMERS_LIST.component}/>
             <Route path={RoutesConstants.CUSTOMERS_ADD_EDIT.path} 
                     component={RoutesConstants.CUSTOMERS_ADD_EDIT.component}/>
+            <Route path={RoutesConstants.CUSTOMERS_SETTINGS.path} 
+                    component={RoutesConstants.CUSTOMERS_SETTINGS.component}/>
             </React.Fragment>
         )
     }
