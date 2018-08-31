@@ -16,7 +16,7 @@ class Root extends Component{
         return(<React.Fragment>
             <Header />
             <ToolbarComponent/>
-            <Redirect from="/" to="customers" />
+            <Route exact  path="/" render={ ()=> <Redirect to={RoutesConstants.CUSTOMERS_LIST.path} />} />
             <Route path={RoutesConstants.CUSTOMERS_LIST.path} exact 
                     component={RoutesConstants.CUSTOMERS_LIST.component}/>
             <Route path={RoutesConstants.CUSTOMERS_ADD_EDIT.path} 

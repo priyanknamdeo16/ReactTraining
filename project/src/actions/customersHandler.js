@@ -1,7 +1,6 @@
 import Constants from '../constants/constants';
 
 export const getCustomers = () => {
-    console.log('action employees');
     return (dispatch, getState) => {
         setTimeout( () => {
             const emps = [
