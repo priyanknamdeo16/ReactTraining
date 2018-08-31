@@ -53,7 +53,7 @@ export const onFormAdd = () => {
 export const addEditCustomer = (customer) => {
     return (dispatch) => {
   
-      dispatch({type:Constant.ON_CUSTOMER_ADD_EDIT, payload:customer});
+      dispatch({type:Constants.ON_CUSTOMER_ADD_EDIT, payload:customer});
   
         const customers = [];
         customers.push(customer.customer);
