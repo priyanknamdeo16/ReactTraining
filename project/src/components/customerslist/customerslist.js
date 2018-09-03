@@ -36,24 +36,36 @@ class CustomersList extends Component{
       <Table style={styles.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Id</TableCell>
+            <TableCell>Customer Type</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Salary</TableCell>
+            <TableCell>Domain Name</TableCell>
+            <TableCell>Address 1</TableCell>
+            <TableCell>Address 2</TableCell>
+            <TableCell>City</TableCell>
+            <TableCell>State</TableCell>
+            <TableCell>Country</TableCell>
+            <TableCell>Mobile</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map(row => {
             return (
-              <TableRow key={row.id}>
+              <TableRow>
+                <TableCell numeric>{row.customerType}</TableCell>
                 <TableCell component="th" scope="row">
                 <Link to={RoutesConstants.CUSTOMERS_ADD_EDIT.path} 
                     onClick={() => {this.props.customersActions.onCustomersSelected(row)}}>
-                {row.id}
+                {row.name}
                 </Link>
                   
                 </TableCell>
-                <TableCell numeric>{row.name}</TableCell>
-                <TableCell numeric>{row.salary}</TableCell>
+                <TableCell numeric>{row.domainName}</TableCell>
+                <TableCell numeric>{row.address1}</TableCell>
+                <TableCell numeric>{row.address2}</TableCell>
+                <TableCell numeric>{row.city}</TableCell>
+                <TableCell numeric>{row.state}</TableCell>
+                <TableCell numeric>{row.country}</TableCell>
+                <TableCell numeric>{row.mobile}</TableCell>
               </TableRow>
             );
           })}
