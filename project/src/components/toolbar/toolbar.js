@@ -7,13 +7,17 @@ class ToolbarComponent extends Component{
     render() {
         return(
             <Toolbar>
-          <Button variant="outlined">
-                <Link to={RoutesConstants.CUSTOMERS_ADD_EDIT.path}>
-                    Add Customer
+                <Button variant="outlined">
+                    <Link to={RoutesConstants.CUSTOMERS_ADD_EDIT.path}>
+                        Add Customer
                 </Link>
-                    
                 </Button>
-        </Toolbar>
+                <Button variant="outlined">
+                    <Link to={RoutesConstants.ADMIN_ADD_EDIT.path}>
+                        Manage ADMIN
+                    </Link>
+                </Button>
+            </Toolbar>
         )
     }
 }
