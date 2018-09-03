@@ -50,20 +50,20 @@ this.saveCustomerDetails = this.saveCustomerDetails.bind(this);
   }
 
   saveCustomerDetails(){
-      this.props.customerAction.addEditCustomer({
-          customer:{
-            customerType: this.state.customerType,
-            domainName: this.state.domainName,
-            name: this.state.name,
-            address1: this.state.address1,
-            address2: this.state.address2,
-            city: this.state.city,
-            state: this.state.state,
-            country: this.state.country,
-            mobile: this.state.mobile,
-          }
-      });
-      return;
+    const customer = {
+      customerType: this.state.customerType,
+      domainName: this.state.domainName,
+      name: this.state.name,
+      address1: this.state.address1,
+      address2: this.state.address2,
+      city: this.state.city,
+      state: this.state.state,
+      country: this.state.country,
+      mobile: this.state.mobile,
+    }
+    const customersList = this.props.customers;
+    customersList.push(customer);
+      this.props.customerAction.addEditCustomer(customersList);
   }
  
 
@@ -161,7 +161,7 @@ this.saveCustomerDetails = this.saveCustomerDetails.bind(this);
 }
 
 const mapStateToProps = (state) => ({
-    customers: state.customers.customer
+    customers: state.customers.customerList
   });
   
   const mapDispatchToProps = (dispatch) => ({

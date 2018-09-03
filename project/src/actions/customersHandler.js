@@ -51,11 +51,11 @@ export const onFormAdd = () => {
         });
     }
 };
-export const addEditCustomer = (customer) => {
+export const addEditCustomer = (customerList) => {
     return (dispatch) => {
         dispatch({
           type:Constants.ON_CUSTOMERS_ADD_EDIT,
-          payload:customer.customer
+          payload:customerList
         });
     }
 };
