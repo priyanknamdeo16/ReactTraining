@@ -13,9 +13,13 @@ class Root extends Component{
         this.props.customersAction.getCustomers();
     }
     render(){
+        let toolbar;
+        if(!this.props.tabIndex) {
+            toolbar =  <ToolbarComponent/>;
+        }
         return(<React.Fragment>
             <Header />
-            <ToolbarComponent/>
+            {toolbar}
             <Route exact  path="/" render={ ()=> <Redirect to={RoutesConstants.CUSTOMERS_LIST.path} />} />
             <Route path={RoutesConstants.CUSTOMERS_LIST.path} exact 
                     component={RoutesConstants.CUSTOMERS_LIST.component}/>
@@ -29,8 +33,10 @@ class Root extends Component{
         )
     }
 }
-
+const mapStateToProps = (state) => ({
+    tabIndex: state.tabs.tabIndex
+});
 const mapDispatchToProps = (dispatch) => ({
     customersAction: bindActionCreators(userActionsCreater, dispatch)
 });
-export default withRouter(connect(null, mapDispatchToProps)(Root));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Root));
