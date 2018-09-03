@@ -9,7 +9,7 @@ class SettingsComponent extends Component{
     }
     render(){
         return (
-            <div>settings component</div>
+            <div>settings component here</div>
         )
     }
 }
