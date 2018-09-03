@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 import RoutesConstants from '../../constants/route.constants';
 import { bindActionCreators } from 'redux';
 import * as userActionsCreater from '../../actions/customersHandler';
+import * as SettingsActionCreator from '../../actions/tabActions';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -24,6 +25,9 @@ const styles = {
 
   
 class CustomersList extends Component{
+    componentDidMount(){
+      this.props.tabIndexChnage.tabChange(0);
+    }
     render() {
         const rows = this.props.customersList;
         return (
@@ -66,7 +70,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    customersActions: bindActionCreators(userActionsCreater, dispatch)
+    customersActions: bindActionCreators(userActionsCreater, dispatch),
+    tabIndexChnage: bindActionCreators(SettingsActionCreator, dispatch)
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CustomersList));

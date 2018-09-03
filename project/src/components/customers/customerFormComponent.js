@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
-import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as userActionCreators from '../../actions/customersHandler';
 import styled from 'styled-components';
-import { Route, Link } from "react-router-dom";
-import CustomersContainer from './customerContainer'
+import {  Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import RoutesConstants from '../../constants/route.constants';
 
@@ -25,10 +21,6 @@ font-size: 16px;
 margin-top: 10px;
 width: 150px; 
 height: 30px;`;
-
-const Select = styled(Input)`
-height: 35px;
-`;
 
 class CustomerForm extends Component {
     

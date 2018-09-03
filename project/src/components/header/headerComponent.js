@@ -10,6 +10,7 @@ import RouteConstants from '../../constants/route.constants';
 
 class Header extends Component{
         render(){
+            console.log(this.props.tabState);
             return(
                 <React.Fragment>
                     <div className="App-header">

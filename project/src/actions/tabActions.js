@@ -1,4 +1,4 @@
-import Constants from '../constants';
+import Constants from '../constants/constants';
 
 export const tabChange = (index) => {
     return (dispatchEvent, getState) => {
