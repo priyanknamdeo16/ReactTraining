@@ -17,9 +17,6 @@ export default createReducer(initialState, {
     return Object.assign({}, state, { selectedCustomer: payload });
   },
   [Constants.ON_CUSTOMERS_ADD_EDIT]: (state, payload) => {
-    // const newList = Object.assign({}, state.customerList);
-    // newList.push(payload);
-    // console.log(newList);
     return Object.assign({}, state, {
       customerList: payload,
       selectedCustomer: null

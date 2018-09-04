@@ -1,0 +1,46 @@
+{
+    "customerList":[
+    {
+        "customerType": "Demo",
+        "domainName": "react.com",
+        "name": "Divya",
+        "address1": "BMCC Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "customerType": "Premium",
+        "domainName": "r1.com",
+        "name": "Yesha",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "customerType": "Demo",
+        "domainName": "redux.com",
+        "name": "Mahesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    }
+
+    ]
+}

@@ -1,31 +1,10 @@
 import Constants from '../constants/constants';
+import  data from '../customers.json';
 
 export const getCustomers = () => {
     return (dispatch, getState) => {
         setTimeout( () => {
-            const customers = [];
-            // const emps = [
-            //     {
-            //         id: 1,
-            //         name: 'Virat Kohli',
-            //         salary: 1000
-            //     },
-            //     {
-            //         id: 2,
-            //         name: 'Sachin Tendulkar',
-            //         salary: 2000
-            //     },
-            //     {
-            //         id: 3,
-            //         name: 'Yuvraj Singh',
-            //         salary: 3000
-            //     },
-            //     {
-            //         id: 4,
-            //         name: 'MSD',
-            //         salary: 4000
-            //     }
-            // ];
+            const customers = data.customerList;
             dispatch({
                 type: Constants.ON_CUSTOMERS_RECIEVED,
                 payload: customers

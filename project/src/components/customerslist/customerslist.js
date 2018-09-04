@@ -51,21 +51,20 @@ class CustomersList extends Component{
           {rows.map(row => {
             return (
               <TableRow>
-                <TableCell numeric>{row.customerType}</TableCell>
                 <TableCell component="th" scope="row">
                 <Link to={RoutesConstants.CUSTOMERS_ADD_EDIT.path} 
                     onClick={() => {this.props.customersActions.onCustomersSelected(row)}}>
                 {row.name}
                 </Link>
-                  
                 </TableCell>
-                <TableCell numeric>{row.domainName}</TableCell>
-                <TableCell numeric>{row.address1}</TableCell>
-                <TableCell numeric>{row.address2}</TableCell>
-                <TableCell numeric>{row.city}</TableCell>
-                <TableCell numeric>{row.state}</TableCell>
-                <TableCell numeric>{row.country}</TableCell>
-                <TableCell numeric>{row.mobile}</TableCell>
+                <TableCell>{row.customerType}</TableCell>
+                <TableCell>{row.domainName}</TableCell>
+                <TableCell >{row.address1}</TableCell>
+                <TableCell >{row.address2}</TableCell>
+                <TableCell >{row.city}</TableCell>
+                <TableCell >{row.state}</TableCell>
+                <TableCell >{row.country}</TableCell>
+                <TableCell >{row.mobile}</TableCell>
               </TableRow>
             );
           })}
