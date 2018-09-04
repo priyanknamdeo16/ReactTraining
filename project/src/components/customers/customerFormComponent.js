@@ -26,7 +26,8 @@ font-size: 16px;`;
 
 const CustomerFormComponent = (props) => {
     return(
-        <div>
+        <div className="borderForm">
+        <div className="customerForm"><label>Customer Form</label></div>
         <Grid container spacing={24} style={{ marginLeft: 8 , padding: 30}}>
           <Grid item xs>
             <Label htmlFor="custId">Customer Type: </Label>
