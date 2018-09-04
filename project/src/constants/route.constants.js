@@ -1,4 +1,4 @@
-import CustomerForm from '../components/customers/customerFormComponent';
+import CustomerForm from '../components/customers/customerFormContainer';
 import CustomersList from '../components/customerslist/customerslist';
 import SettingsComponent from '../components/settings/settings';
 import ManageAdminView from '../components/manageAdmin/manageAdminView/ManageAdminView';
