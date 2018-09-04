@@ -1,5 +1,5 @@
 import Constants from '../constants/constants';
-import createReducer from '../utils/utils';
+import {createReducer} from '../utils/utils';
 
 const manageAdminData ={
     adminList: []

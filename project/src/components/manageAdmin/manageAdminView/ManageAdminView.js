@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { withRouter } from "react-router-dom";
-
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as adminActionCreators from '../../../actions/manageAdminHandler';
 
 const Form = styled.form`
   width: 80%;
@@ -38,20 +40,39 @@ class ManageAdminView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'yesha'
+      name: '',
+      lname: '',
+      address: '',
+      userName: '',
+      id: '',
+      email: '',
+      country: '',
+      state: '',
+      city: ''
     };
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
   }
 
   handleSubmitForm(event) {
-    console.log(event.target[0].value)
     event.preventDefault();
     //const data = new FormData(event.target);
-    const formData = {};
-    for (const field in this.refs) {
-      formData[field] = this.refs[field].value;
+    // const formData = {};
+    // for (const field in this.refs) {
+    //   formData[field] = this.refs[field].value;
+    // }
+    const formData ={}
+    console.log(event.target[2].value)
+    for(let i =0; i<9; i++) {
+      formData[event.target[i].name] = event.target[i].value
     }
-    console.log('-->', formData);
+    // const target = event.target;
+    // const value = target.value;
+    // const name = target.name;
+    // this.setState ({
+    //   [name]: value
+    // });
+    console.log(formData);
+    this.props.manageAdminAction.addEditCustomer(formData);
   }
  
   render() {
@@ -64,24 +85,42 @@ class ManageAdminView extends React.Component {
             <Label>First Name:</Label>
             {/* <input type="text" defaultValue={this.props.newName}
               onChange={this.onNameChanged} /> */}
-            <Input ref="fname" id="name1" name="firstName" type="text" defaultValue={this.state.name} />
+            <Input ref="fname" id="name1" name="name" type="text" defaultValue={this.state.name} />
             <Label>Last Name</Label>
-            <Input ref="lname" id="name2" name="lastName" type="text" />
-            <Label>Address1:</Label>
-            <Input name="add1" type="text" />
+            <Input ref="lname" id="name2" name="lname" type="text" defaultValue={this.state.lname}/>
+            <Label>Address:</Label>
+            <Input id="add2" name="address" type="text" defaultValue={this.state.address}/>
             <Label>UserName:</Label>
-            <Input name="add2" type="text" />
+            <Input name="userName" type="text" defaultValue={this.state.userName}/>
             <Label>ID:</Label>
-            <Input name="id" type="text" />
+            <Input name="id" type="text" defaultValue={this.state.id}/>
             <Label>Email:</Label>
-            <Input name="email" type="text" />
-            <Label>Country</Label>
-            <Input name="country" type="text" />
-            <Label>State</Label>
-            <Input name="state" type="text" />
+            <Input name="email" type="text" defaultValue={this.state.email}/>
+            <Label>Country:</Label>
+            <Input name="country" type="text" defaultValue={this.state.country}/>
+            <Label>State:</Label>
+            <select
+              name="state" defaultValue={this.state.state} 
+              style={{ fontSize: 16, marginTop: 10, width: 150, height: 30 }}>
+              <option>Select State</option>
+              <option>Maharashtra</option>
+              <option>MadhyaPradesh</option>
+              <option>Karnataka</option>
+              <option>Tamil Nadu</option>
+              <option>Kerala</option>
+            </select>
             <Label>City:</Label>
-            <Input name="city" type="text" />
-            <div>
+            <select
+            name="city" defaultValue={this.state.city} 
+              style={{ fontSize: 16, marginTop: 10, width: 150, height: 30 }}>
+              <option>Select City</option>
+              <option>Pune</option>
+              <option>Goa</option>
+              <option>Bang</option>
+              <option>Tamil Nadu</option>
+              <option>Kerala</option>
+            </select>
+            <div> <br/> <br/>
               <button
                 >Save</button>
               <button
@@ -93,8 +132,16 @@ class ManageAdminView extends React.Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  adminList: state.adminList
+});
 
-export default withRouter(ManageAdminView);
+const mapDispatchToProps = (dispatch) => ({
+  manageAdminAction: bindActionCreators(
+    adminActionCreators, dispatch)
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ManageAdminView));
 
 // import React from 'react';
 // class ManageAdminView extends React.Component {
