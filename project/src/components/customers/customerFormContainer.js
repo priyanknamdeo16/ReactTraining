@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as userActionCreators from '../../actions/customersHandler';
 import { withRouter } from "react-router-dom";
 import CustomerFormComponent from './customerFormComponent';
+import customerslist from "../customerslist/customerslist";
 
 class CustomerForm extends Component {
     
@@ -28,8 +29,12 @@ this.saveCustomerDetails = this.saveCustomerDetails.bind(this);
   }
 
   onSelection(event){
+    console.log(event.target.name);
     const field = event.target.name;
     this.setState({[field ]: event.target.value });
+    if(this.props.selectedCustomer && this.props.selectedCustomer[field] !== event.target.value){
+      this.props.selectedCustomer[field] = event.target.value;
+    }
   }
 
   saveCustomerDetails(){
@@ -45,18 +50,28 @@ this.saveCustomerDetails = this.saveCustomerDetails.bind(this);
       mobile: this.state.mobile,
     }
     const customersList = this.props.customers;
-    customersList.push(customer);
+    if(this.props.selectedCustomer){
+      for (let i = 0; i< customersList.length; i ++) {
+        if(this.props.selectedCustomer.domainName === customersList[i].domainName) {
+          customersList[i] = this.props.selectedCustomer;
+        }
+      }
+    }
+    else{
+      customersList.push(customer);
+    }
   this.props.customerAction.addEditCustomer(customersList);
   }
   render() {
     return (
-      <CustomerFormComponent onSaveDetails= {this.saveCustomerDetails} onSelection={this.onSelection}/>
+      <CustomerFormComponent selectedCustomer ={this.props.selectedCustomer} onSaveDetails= {this.saveCustomerDetails} onSelection={this.onSelection}/>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-    customers: state.customers.customerList
+    customers: state.customers.customerList,
+    selectedCustomer: state.customers.selectedCustomer
   });
   
   const mapDispatchToProps = (dispatch) => ({
