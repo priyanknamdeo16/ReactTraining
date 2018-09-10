@@ -40,3 +40,13 @@
   font-size: 20px;
   text-align: center;
 }
+.datePickerClass {
+  height: 20px;
+  width: 300px;
+  margin-top: 24px;
+  float: left;
+}
+.radioButtonLabel {
+  padding: 29px 0px 0px 0px;
+  float: left;
+}

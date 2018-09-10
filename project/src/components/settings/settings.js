@@ -9,10 +9,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-const Wrapper = styled.div`
-width: '100%';
-overflowX: 'auto';
-`;
+import AddEditSettings from './addEditSettings';
+
+
 
 class SettingsComponent extends Component {
     componentDidMount() {
@@ -20,8 +19,8 @@ class SettingsComponent extends Component {
     }
     render() {
         return (
-            <Wrapper>
-                <TableHead>
+            <div>
+                {/* <TableHead>
                     <TableRow>
                         <TableCell>Announcement Name</TableCell>
                         <TableCell>Announcement Start</TableCell>
@@ -30,8 +29,9 @@ class SettingsComponent extends Component {
                         <TableCell>Downtime Start</TableCell>
                         <TableCell>Downtime End</TableCell>
                     </TableRow>
-                </TableHead>
-            </Wrapper>
+                </TableHead> */}
+                <AddEditSettings/>
+                </div>
         )
     }
 }
