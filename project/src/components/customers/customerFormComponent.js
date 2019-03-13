@@ -32,7 +32,7 @@ const CustomerFormComponent = (props) => {
           <Grid item xs>
             <Label htmlFor="custId">Customer Type: </Label>
             <select name="customerType" required
-              style={{ fontSize: 16, marginTop: 10, width: 150, height: 30 }}
+              style={{ fontSize: 16, marginTop: 10, width: 150, height: 30 }} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.customerType : props.customerType}
               value={props.customerType} onChange={props.onSelection}>
               <option> Select Customer </option>
               <option> Demo</option>
@@ -42,13 +42,13 @@ const CustomerFormComponent = (props) => {
           <Grid item xs>
             <Label>Customer Name: </Label>
             <Input name="name"
-              type="text" value={props.name} onChange={props.onSelection}
+              type="text" defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.name : props.name} value={props.name} onChange={props.onSelection}
             />
           </Grid>
           <Grid item xs>
             <Label>Domain Name: </Label>
-            <Input
-              type="email" name="domainName" value={props.domainName} onChange={props.onSelection}
+            <Input 
+              type="email" name="domainName" defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.domainName : props.domainName} value={props.domainName} onChange={props.onSelection}
             />
           </Grid>
         </Grid>
@@ -56,19 +56,19 @@ const CustomerFormComponent = (props) => {
           <Grid item xs>
             <Label>Address Line 1: </Label>
             <Input
-              type="text" name="address1" value={props.address1} onChange={props.onSelection}
+              type="text" name="address1" defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.address1 : props.address1} value={props.address1} onChange={props.onSelection}
             />
           </Grid>
           <Grid item xs>
             <Label>Address Line 2: </Label>
             <Input
-              type="text" name="address2" value={props.address2} onChange={props.onSelection}
+              type="text" name="address2" defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.address2 : props.address2} value={props.address2} onChange={props.onSelection}
             />
           </Grid>
           <Grid item xs>
             <Label>City: </Label>
             <Input
-              type="text" name="city" value={props.city} onChange={props.onSelection}
+              type="text" name="city" value={props.city} onChange={props.onSelection} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.city : props.city}
             />
           </Grid>
         </Grid>
@@ -76,7 +76,7 @@ const CustomerFormComponent = (props) => {
           <Grid item xs>
             <Label>State: </Label>
             <select
-              name="state" value={props.state} onChange={props.onSelection}
+              name="state" value={props.state} onChange={props.onSelection} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.state : props.state}
               style={{ fontSize: 16, marginTop: 10, width: 150, height: 30 }}>
               <option>Select State</option>
               <option>Maharashtra</option>
@@ -87,13 +87,13 @@ const CustomerFormComponent = (props) => {
           <Grid item xs>
             <Label>Country: </Label>
             <Input
-              type="text" name="country" value={props.country} onChange={props.onSelection}
+              type="text" name="country" value={props.country} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.country : props.country} onChange={props.onSelection}
             />
           </Grid>
           <Grid item xs>
             <Label>Mobile: </Label>
             <Input
-              type="phone" name="mobile" value={props.mobile} onChange={props.onSelection}
+              type="phone" name="mobile" value={props.mobile} onChange={props.onSelection} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.mobile : props.mobile}
             />
           </Grid>
         </Grid>
