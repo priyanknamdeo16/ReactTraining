@@ -1,7 +1,7 @@
 import CustomerForm from '../components/customers/customerFormContainer';
 import CustomersList from '../components/customerslist/customerslist';
 import SettingsComponent from '../components/settings/settings';
-import ManageAdminView from '../components/manageAdmin/manageAdminView/ManageAdminView';
+import ManageAdmin from '../components/manageAdmin/manageAdminContainer';
 
 const Routes = {
     'CUSTOMERS_ADD_EDIT' : {
@@ -18,7 +18,7 @@ const Routes = {
     },
     'ADMIN_ADD_EDIT': {
         path: '/customers/addEditAdmin',
-        component: ManageAdminView
+        component: ManageAdmin
     }
 };
 
