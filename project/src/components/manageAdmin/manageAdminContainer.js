@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 import * as adminActionCreators from '../../actions/manageAdminHandler';
+import * as SettingsActionCreator from '../../actions/tabActions';
 import ManageAdminView from './ManageAdminView';
 
 class ManageAdmin extends Component {
@@ -22,6 +23,9 @@ class ManageAdmin extends Component {
 
      this.handleSubmitForm = this.handleSubmitForm.bind(this);
     }
+    componentDidMount() {
+        this.props.tabIndexChange.tabChange(1);
+    }
     handleSubmitForm(event) {
        event.preventDefault();
         const formData = {},
@@ -37,7 +41,7 @@ class ManageAdmin extends Component {
    
     render() {
         return (
-            <ManageAdminView onSaveAdmin = {this.handleSubmitForm} />
+            <ManageAdminView onSaveAdmin = {this.handleSubmitForm} tabIndex = '1' />
         );
     }
 }
@@ -48,7 +52,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToprops = (dispatch) => ({
     adminCreationAction : bindActionCreators(
-        adminActionCreators, dispatch)
+        adminActionCreators, dispatch),
+        tabIndexChange: bindActionCreators(SettingsActionCreator, dispatch)
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToprops)(ManageAdmin));

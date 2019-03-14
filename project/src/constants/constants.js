@@ -8,5 +8,6 @@ export default createConstants(
     'ON_CUSTOMERS_SELECTED',
     'ON_CUSTOMERS_ADD_EDIT',
     'ON_TAB_CHANGE',
+    'ON_ADMIN_RECIEVED',
     'ON_ADMIN_ADD_EDIT'
 );

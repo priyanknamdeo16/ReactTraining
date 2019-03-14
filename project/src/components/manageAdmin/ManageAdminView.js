@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { withRouter } from "react-router-dom";
-import * as adminActionCreators from '../../actions/manageAdminHandler';
+import RoutesConstants from '../../constants/route.constants';
+import ToolbarComponent from '../toolbar/toolbar';
 
 const Form = styled.form`
   width: 80%;
@@ -34,16 +35,16 @@ const Header = styled.h3`
   background: light grey;
 `;
 
-
-
-
-
 const ManageAdminView = (props) => {
+  let toolbar = '';
+  if (props.tabindex === '1') {
+    toolbar = <ToolbarComponent tabPath={RoutesConstants.ADMIN_ADD_EDIT.path} displayName='Add Admin'/>;
+  }
   return (
-    <React.Fragment>
+    <React.Fragment> 
         <Header align="center"><b>Manage Admin</b></Header>
+        {toolbar}
         <Card>
-
           <Form onSubmit={props.onSaveAdmin}>
             <Label>First Name:</Label>
             <Input  id="name1" name="name" type="text" value={props.name} />

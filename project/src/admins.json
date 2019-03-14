@@ -1,0 +1,45 @@
+{
+    "adminList":[
+    {   "id": 1,
+        "domainName": "react.com",
+        "name": "abc",
+        "address1": "BMCC Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "id": 2,
+        "domainName": "r1.com",
+        "name": "Yesha",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "id": 3,
+        "domainName": "redux.com",
+        "name": "Mahesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "id": 4,
+        "domainName": "angular.com",
+        "name": "Dinesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    }
+
+    ]
+}

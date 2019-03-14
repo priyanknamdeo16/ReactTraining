@@ -28,6 +28,10 @@ class Header extends Component{
                                 component={Link} to={RouteConstants.CUSTOMERS_LIST.path}
                                 label={'Customers'}>
                        </Tab>
+                       <Tab className="tabWidth" icon={<PersonIcon />} 
+                                component={Link} to={RouteConstants.ADMIN_LIST.path}
+                                label={'Admin'}>
+                       </Tab>
                        <Tab className="tabWidth" icon={<SettingIcon />} 
                             component={Link} to={RouteConstants.CUSTOMERS_SETTINGS.path}
                             label={'Settings'}>
