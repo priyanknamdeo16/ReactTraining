@@ -1,40 +1,36 @@
 {
     "adminList":[
     {   "id": 1,
-        "domainName": "react.com",
+        "userName":"abc000",
         "name": "abc",
-        "address1": "BMCC Road",
-        "address2": "Pune",
+        "email": "abc@bridges.co.in",
         "city": "Pune",
         "state": "Maharashtra",
         "country": "India",
         "mobile":"0000001123"
     },  {
         "id": 2,
-        "domainName": "r1.com",
+        "userName":"yjn123",
         "name": "Yesha",
-        "address1": "Baner Road",
-        "address2": "Pune",
+        "email": "yjn@bridges.co.in",
         "city": "Pune",
         "state": "Maharashtra",
         "country": "India",
         "mobile":"0000001123"
     },  {
         "id": 3,
-        "domainName": "redux.com",
+        "userName":"mjawadi",
         "name": "Mahesh",
-        "address1": "Baner Road",
-        "address2": "Pune",
+        "email": "mwj@bridges.co.in",
         "city": "Pune",
         "state": "Maharashtra",
         "country": "India",
         "mobile":"0000001123"
     },  {
         "id": 4,
-        "domainName": "angular.com",
+        "userName":"dkswami",
         "name": "Dinesh",
-        "address1": "Baner Road",
-        "address2": "Pune",
+        "email": "dkswami@bridges.co.in",
         "city": "Pune",
         "state": "Maharashtra",
         "country": "India",

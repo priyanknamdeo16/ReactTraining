@@ -22,7 +22,7 @@ const Routes = {
         component: AdminList
     },
     'ADMIN_ADD_EDIT': {
-        path: '/customers/addEditAdmin',
+        path: '/Admins/addEditAdmin',
         component: ManageAdmin
     }
 };

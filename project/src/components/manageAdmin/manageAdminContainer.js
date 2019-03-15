@@ -5,6 +5,8 @@ import { withRouter } from 'react-router-dom';
 import * as adminActionCreators from '../../actions/manageAdminHandler';
 import * as SettingsActionCreator from '../../actions/tabActions';
 import ManageAdminView from './ManageAdminView';
+import RoutesConstants from '../../constants/route.constants';
+import ToolbarComponent from '../toolbar/toolbar';
 
 class ManageAdmin extends Component {
     constructor(props) {
@@ -23,9 +25,7 @@ class ManageAdmin extends Component {
 
      this.handleSubmitForm = this.handleSubmitForm.bind(this);
     }
-    componentDidMount() {
-        this.props.tabIndexChange.tabChange(1);
-    }
+   
     handleSubmitForm(event) {
        event.preventDefault();
         const formData = {},
@@ -36,24 +36,24 @@ class ManageAdmin extends Component {
         }
         adminList.push(formData);
         this.props.adminCreationAction.addEditAdmin(adminList);
-        this.props.history.push('/');
+        this.props.history.push('/Admins');
     }
    
     render() {
         return (
-            <ManageAdminView onSaveAdmin = {this.handleSubmitForm} tabIndex = '1' />
+            <ManageAdminView onSaveAdmin = {this.handleSubmitForm}  />
         );
     }
 }
 
 const mapStateToProps = (state) => ({
     adminList: state.admin.adminList
+
 });
 
 const mapDispatchToprops = (dispatch) => ({
     adminCreationAction : bindActionCreators(
-        adminActionCreators, dispatch),
-        tabIndexChange: bindActionCreators(SettingsActionCreator, dispatch)
+        adminActionCreators, dispatch)
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToprops)(ManageAdmin));

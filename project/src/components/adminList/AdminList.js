@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import RoutesConstants from '../../constants/route.constants';
 import { bindActionCreators } from 'redux';
 import * as adminActionsCreater from '../../actions/manageAdminHandler';
 import * as SettingsActionCreator from '../../actions/tabActions';
@@ -12,6 +11,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import RoutesConstants from '../../constants/route.constants';
+import ToolbarComponent from '../toolbar/toolbar';
 
 const styles = {
     root: {
@@ -30,16 +31,18 @@ class AdminList extends Component{
     }
     render() {
         const rows = this.props.adminList;
+        let toolbar;
+        toolbar =  <ToolbarComponent tabPath={RoutesConstants.ADMIN_ADD_EDIT.path} displayName='Add Admin'/>;
         return (
             <div>
+              {toolbar}
                 <Paper style={styles.root}>
       <Table style={styles.table}>
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell>Domain Name</TableCell>
-            <TableCell>Address 1</TableCell>
-            <TableCell>Address 2</TableCell>
+            <TableCell>userName</TableCell>
+            <TableCell>email</TableCell>
             <TableCell>City</TableCell>
             <TableCell>State</TableCell>
             <TableCell>Country</TableCell>
@@ -56,9 +59,8 @@ class AdminList extends Component{
                 {row.name}
                 {/* </Link> */}
                 </TableCell>
-                <TableCell>{row.domainName}</TableCell>
-                <TableCell >{row.address1}</TableCell>
-                <TableCell >{row.address2}</TableCell>
+                <TableCell>{row.userName}</TableCell>
+                <TableCell >{row.email}</TableCell>
                 <TableCell >{row.city}</TableCell>
                 <TableCell >{row.state}</TableCell>
                 <TableCell >{row.country}</TableCell>
@@ -75,7 +77,8 @@ class AdminList extends Component{
 }
 
 const mapStateToProps = (state) => ({
-    adminList : state.admin.adminList
+    adminList : state.admin.adminList,
+    tabIndex: state.tabs.tabIndex
 });
 
 const mapDispatchToProps = (dispatch) => ({

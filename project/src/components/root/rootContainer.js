@@ -16,9 +16,14 @@ class Root extends Component{
     }
     render(){
         let toolbar;
-        if(!this.props.tabIndex) {
-             toolbar =  <ToolbarComponent tabPath={RoutesConstants.CUSTOMERS_ADD_EDIT.path} displayName='Add Customer'/>;
-        }
+    //     if(this.props.tabIndex === 0) {
+    //          toolbar =  <ToolbarComponent tabPath={RoutesConstants.CUSTOMERS_ADD_EDIT.path} displayName='Add Customer'/>;
+    //     }
+    //     if(this.props.tabIndex === 1) {
+    //         toolbar =  <ToolbarComponent tabPath={RoutesConstants.ADMIN_ADD_EDIT.path} displayName='Add Admin'/>;
+    //    }
+    console.log('current location is>>>', this.props.location.pathname);
+    toolbar =   (this.props.location.pathname === '/customers') ? (<ToolbarComponent tabPath={RoutesConstants.CUSTOMERS_ADD_EDIT.path} displayName='Add Customer'/>) : null;
         return(<React.Fragment>
             <Header />
             {toolbar}
@@ -38,7 +43,7 @@ class Root extends Component{
     }
 }
 const mapStateToProps = (state) => ({
-    tabIndex: state.tabs.tabIndex
+   // tabIndex: state.tabs.tabIndex
 });
 const mapDispatchToProps = (dispatch) => ({
     customersAction: bindActionCreators(userActionsCreater, dispatch),
