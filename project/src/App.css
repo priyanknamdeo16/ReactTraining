@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -12,6 +9,7 @@
   padding: 20px;
   color: white;
   font-size: 24px;
+  text-align: center;
 }
 
 .borderForm{
@@ -35,10 +33,10 @@
 }
 
 .customerForm{
-  font-weight: bold;
-  margin-top: 20px !important;
-  font-size: 20px;
-  text-align: center;
+    padding: 18px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: lightgray;
 }
 .datePickerClass {
   height: 20px;
