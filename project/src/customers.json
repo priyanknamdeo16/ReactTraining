@@ -43,6 +43,116 @@
         "state": "Maharashtra",
         "country": "India",
         "mobile":"0000001123"
+    },  {
+        "id": 5,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh1",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "id": 5,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh2",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "id": 6,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh55",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "id": 7,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dineshgtgt",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    },  {
+        "id": 8,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dineshhy",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    }, {
+        "id": 4,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    }  ,{
+        "id": 4,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    }, {
+        "id": 4,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    } , {
+        "id": 4,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
+    } , {
+        "id": 4,
+        "customerType": "Premium",
+        "domainName": "angular.com",
+        "name": "Dinesh",
+        "address1": "Baner Road",
+        "address2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "mobile":"0000001123"
     }
 
     ]

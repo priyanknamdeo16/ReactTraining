@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  margin: 0 5%;
 }
 
 .App-logo {
@@ -12,6 +11,7 @@
   background-color:#E01;
   padding: 20px;
   color: white;
+  font-size: 24px;
 }
 
 .borderForm{
