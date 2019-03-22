@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import {withRouter} from 'react-router-dom';
 import { Route, Redirect } from 'react-router-dom';
 import ToolbarComponent from '../toolbar/toolbar';
+import Header from '../header/headerComponent';
 
 class Root extends Component{
     componentDidMount(){
@@ -14,12 +15,11 @@ class Root extends Component{
         this.props.adminAction.getAdminList(); //get admins list
     }
     render(){
-    let toolbar;
-    toolbar =   (this.props.location.pathname === '/customers') ? (<ToolbarComponent tabPath={RoutesConstants.CUSTOMERS_ADD_EDIT.path} displayName='Add Customer'/>) : null;
+    let header =   (this.props.location.pathname !== '/login') ? (<Header />) : null;
         return(<React.Fragment>
             <Route path={RoutesConstants.LOGIN.path} exact
                     component={RoutesConstants.LOGIN.component}/>
-            {/* <Header /> */}
+            {header}
             {/* <Route exact  path="/" render={ ()=> <Redirect to={RoutesConstants.CUSTOMERS_LIST.path} />} /> */}
             <Route path={RoutesConstants.CUSTOMERS_LIST.path} exact
                     component={RoutesConstants.CUSTOMERS_LIST.component}/>

@@ -12,7 +12,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Header from '../header/headerComponent';
 import ToolbarComponent from '../toolbar/toolbar';
 
 const styles = {
@@ -35,7 +34,6 @@ class CustomersList extends Component{
         let toolbar;
         toolbar =   (this.props.location.pathname === '/customers') ? (<ToolbarComponent tabPath={RoutesConstants.CUSTOMERS_ADD_EDIT.path} displayName='Add Customer'/>) : null;    
         return (<React.Fragment>
-           <Header />
           {toolbar}
             <div>
                 <Paper style={styles.root}>
