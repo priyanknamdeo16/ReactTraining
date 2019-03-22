@@ -3,8 +3,13 @@ import CustomersList from '../components/customerslist/customerslist';
 import SettingsComponent from '../components/settings/settings';
 import ManageAdmin from '../components/manageAdmin/manageAdminContainer';
 import AdminList from '../components/adminList/AdminList';
+import LoginContainer from '../components/login/loginContainer';
 
-const Routes = {
+const Routes ={
+    'LOGIN' : {
+        path: '/login',
+        component: LoginContainer
+    },
     'CUSTOMERS_ADD_EDIT' : {
         path: '/customers/addEditCustomer',
         component: CustomerForm

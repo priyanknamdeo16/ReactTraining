@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Header from '../header/headerComponent';
 import RoutesConstants from '../../constants/route.constants';
 import { connect } from 'react-redux';
 import * as userActionsCreater from '../../actions/customersHandler'; 
@@ -15,20 +14,14 @@ class Root extends Component{
         this.props.adminAction.getAdminList(); //get admins list
     }
     render(){
-        let toolbar;
-    //     if(this.props.tabIndex === 0) {
-    //          toolbar =  <ToolbarComponent tabPath={RoutesConstants.CUSTOMERS_ADD_EDIT.path} displayName='Add Customer'/>;
-    //     }
-    //     if(this.props.tabIndex === 1) {
-    //         toolbar =  <ToolbarComponent tabPath={RoutesConstants.ADMIN_ADD_EDIT.path} displayName='Add Admin'/>;
-    //    }
-    console.log('current location is>>>', this.props.location.pathname);
+    let toolbar;
     toolbar =   (this.props.location.pathname === '/customers') ? (<ToolbarComponent tabPath={RoutesConstants.CUSTOMERS_ADD_EDIT.path} displayName='Add Customer'/>) : null;
         return(<React.Fragment>
-            <Header />
-            {toolbar}
-            <Route exact  path="/" render={ ()=> <Redirect to={RoutesConstants.CUSTOMERS_LIST.path} />} />
-            <Route path={RoutesConstants.CUSTOMERS_LIST.path} exact 
+            <Route path={RoutesConstants.LOGIN.path} exact
+                    component={RoutesConstants.LOGIN.component}/>
+            {/* <Header /> */}
+            {/* <Route exact  path="/" render={ ()=> <Redirect to={RoutesConstants.CUSTOMERS_LIST.path} />} /> */}
+            <Route path={RoutesConstants.CUSTOMERS_LIST.path} exact
                     component={RoutesConstants.CUSTOMERS_LIST.component}/>
             <Route path={RoutesConstants.ADMIN_LIST.path} exact 
                     component={RoutesConstants.ADMIN_LIST.component}/>

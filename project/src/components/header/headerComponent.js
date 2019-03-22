@@ -10,10 +10,9 @@ import RouteConstants from '../../constants/route.constants';
 
 class Header extends Component{
         render(){
-            console.log(this.props.tabState);
             return(
                 <React.Fragment>
-                    <div className="App-header">
+                    <div className="appHeader">
                         Customer Management System
                     </div>
                     <div>
@@ -36,7 +35,8 @@ class Header extends Component{
                             component={Link} to={RouteConstants.CUSTOMERS_SETTINGS.path}
                             label={'Settings'}>
                        </Tab>
-                       <Tab label={'LogOut'}>
+                       <Tab
+                            component={Link} to={RouteConstants.LOGIN.path} label={'LogOut'}>
                        </Tab>
                         </Tabs>
                     </Paper>

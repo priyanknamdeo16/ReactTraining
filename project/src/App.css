@@ -4,7 +4,7 @@
   height: 79px;
 }
 
-.App-header {
+.appHeader {
   background-color:#E01;
   padding: 20px;
   color: white;
@@ -28,10 +28,30 @@
   max-width: 10px !important;
 }
 
-.borderForm {
-  border: 1px solid gray;
+.loginBox{
+  border: 1px solid lightgray;
+  font-size: 24px;
+  text-align: center;
+  margin: 20%;
 }
-
+.loginHeader{
+  padding: 10px;
+  background: #e01;
+  color: #ffffff;
+}
+.loginBtn{
+  background: #000000;
+  border-radius: 3px;
+  border: none;
+  width:100px;
+  padding: 10px;
+  margin-bottom:10px;
+  color: white;
+  font-size: 16px; 
+  text-decoration: none;
+  margin: 15px;
+                          
+}
 .customerForm{
     padding: 18px;
     font-weight: bold;
