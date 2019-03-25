@@ -1,8 +1,9 @@
 
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import TextField from 'material-ui/TextField';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+//import TextField from 'material-ui/TextField';
+import TextField from '@material-ui/core/TextField'
 import RoutesConstants from '../../constants/route.constants';
 import {Link, withRouter} from 'react-router-dom';
 const LoginComponent= (props) => {
