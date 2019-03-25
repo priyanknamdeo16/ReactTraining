@@ -7,13 +7,10 @@ import "./App.css";
 import RoutesConstants from './constants/route.constants';
 
 import appStore  from './store/appStore';
-// import { Redirect } from "../../../../../../Library/Caches/typescript/2.6/node_modules/@types/react-router";
-
 const store = appStore();
 
 class App extends Component {
   render() {
-    // const isLoggedIn = true;
     return (
       <Provider store={store}>
       <Router>

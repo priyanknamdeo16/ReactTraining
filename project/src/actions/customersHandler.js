@@ -13,6 +13,25 @@ export const getCustomers = () => {
     };
 };
 
+// export const getCustomers = () => {
+//     return (dispatch, getState) => {
+//         // setTimeout( () => {
+//             let customers = [];
+//                 let url = "http://localhost:3001/customerList";
+
+//                 fetch(url)
+//                 .then(response => response.json())
+//                 .then(data => {
+//                   customers = data
+//                 })
+//             dispatch({
+//                 type: Constants.ON_CUSTOMERS_RECIEVED,
+//                 payload: customers
+//             });
+//         // });
+//     };
+// };
+
 export const onCustomersSelected = (customer) => {
     return (dispatch, getState) => {
         dispatch({

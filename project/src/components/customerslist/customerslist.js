@@ -26,9 +26,11 @@ const styles = {
 
   
 class CustomersList extends Component{
-    componentDidMount(){
-      this.props.tabIndexChnage.tabChange(0);
-    }
+    // componentDidMount(){
+    //   this.props.tabIndexChnage.tabChange(0);
+    //   this.props.customersAction.getCustomers(); //get customers list 
+    //  // this.props.adminAction.getAdminList();
+    // }
     render() {
         const rows = this.props.customersList;
         let toolbar;
