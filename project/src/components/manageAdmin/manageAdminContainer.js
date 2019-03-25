@@ -22,7 +22,9 @@ class ManageAdmin extends Component {
             country: '',
             stateInCountry: '',
             city: '',
-            formValid : false
+            errors : {},
+            formValid : false,
+            
         };
 
      this.handleSubmitForm = this.handleSubmitForm.bind(this);
@@ -31,12 +33,14 @@ class ManageAdmin extends Component {
     handleSubmitForm(event) {
         event.preventDefault();
             const formData = {},
+                 errorMessages = {},
                 adminList = this.props.adminList;
             let isFormValid = true;
 
             for (let i = 0; i < 9; i++) { //to do change to  each
                 if(formValidations(event.target[i].name, event.target[i].value) === false) {
                     isFormValid = false;
+                    errorMessages[event.target[i].name] = '*Invalid ' + event.target[i].name + '. Please Re-enter.'
                 }
                 formData[event.target[i].name] = event.target[i].value
             }
@@ -46,12 +50,16 @@ class ManageAdmin extends Component {
                 this.props.adminCreationAction.addEditAdmin(adminList);
                 this.props.history.push('/Admins');
                 }
+                else {
+                    this.setState({errors : errorMessages})
+                }
             });
     }
    
     render() {
+        console.log('fprmmm>>>>', this.state.errors )
         return (
-            <ManageAdminView onSaveAdmin = {this.handleSubmitForm}  />
+            <ManageAdminView onSaveAdmin = {this.handleSubmitForm} errorData = {this.state.errors} />
         );
     }
 }

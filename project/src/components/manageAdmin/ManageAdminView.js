@@ -36,7 +36,7 @@ const Header = styled.h3`
 `;
 
 const ManageAdminView = (props) => {
-
+   console.log('errr props>>>' , props);
   return (
     <React.Fragment> 
         <Card>
@@ -45,6 +45,7 @@ const ManageAdminView = (props) => {
           <Form onSubmit={props.onSaveAdmin}>
             <Label>First Name: </Label>
             <Input  id="name1" name="name" type="text" value={props.name} placeholder="Name" required/>
+            <p style={{ width: '15%' , display: 'inline'}}>{props.errorData.name} </p>
             <Label>Last Name: </Label>
             <Input  id="name2" name="lname" type="text" value={props.lname} required/>
             {/* <Label>Address:</Label>
