@@ -21,12 +21,12 @@ const Input = styled.input`
 `;
 const Label = styled.label`
   display: inline-block;
-  width: 7%;
+  width: 12%;
 `;
 const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 90%;
+  width: 80%;
   margin: auto;
   border-radius: 5px;
 `;
@@ -39,24 +39,25 @@ const ManageAdminView = (props) => {
 
   return (
     <React.Fragment> 
-        <Header align="center"><b>Manage Admin</b></Header>
         <Card>
+        <Header align="center"><b>Manage Admin</b></Header>
+
           <Form onSubmit={props.onSaveAdmin}>
-            <Label>First Name:</Label>
-            <Input  id="name1" name="name" type="text" value={props.name} />
-            <Label>Last Name</Label>
-            <Input  id="name2" name="lname" type="text" value={props.lname}/>
+            <Label>First Name: </Label>
+            <Input  id="name1" name="name" type="text" value={props.name} placeholder="Name" required/>
+            <Label>Last Name: </Label>
+            <Input  id="name2" name="lname" type="text" value={props.lname} required/>
             {/* <Label>Address:</Label>
             <Input id="add2" name="address" type="text" defaultValue={props.address}/> */}
-            <Label>UserName:</Label>
+            <Label>UserName: </Label>
             <Input name="userName" type="text" value={props.userName}/>
-            <Label>ID:</Label>
+            <Label>ID: </Label>
             <Input name="id" type="text" value={props.id}/>
-            <Label>Email:</Label>
-            <Input name="email" type="text" value={props.email}/>
-            <Label>Country:</Label>
+            <Label>Email: </Label>
+            <Input name="email" type="text" value={props.email} required/>
+            <Label>Country: </Label>
             <Input name="country" type="text" value={props.country}/>
-            <Label>State:</Label>
+            <Label>State: </Label>
             <select
               name="stateInCountry" value={props.stateInCountry} 
               style={{ fontSize: 16, marginTop: 10, width: 150, height: 30 }}>
@@ -67,7 +68,7 @@ const ManageAdminView = (props) => {
               <option>Tamil Nadu</option>
               <option>Kerala</option>
             </select>
-            <Label>City:</Label>
+            <Label>City: </Label>
             <select
             name="city" value={props.city} 
               style={{ fontSize: 16, marginTop: 10, width: 150, height: 30 }}>

@@ -7,6 +7,7 @@ import * as SettingsActionCreator from '../../actions/tabActions';
 import ManageAdminView from './ManageAdminView';
 import RoutesConstants from '../../constants/route.constants';
 import ToolbarComponent from '../toolbar/toolbar';
+import formValidations from '../../utils/formValidations';
 
 class ManageAdmin extends Component {
     constructor(props) {
@@ -21,22 +22,31 @@ class ManageAdmin extends Component {
             country: '',
             stateInCountry: '',
             city: '',
+            formValid : false
         };
 
      this.handleSubmitForm = this.handleSubmitForm.bind(this);
     }
    
     handleSubmitForm(event) {
-       event.preventDefault();
-        const formData = {},
-            adminList = this.props.adminList;
-        
-        for (let i = 0; i < 9; i++) { //to do change to  each
-            formData[event.target[i].name] = event.target[i].value
-        }
-        adminList.push(formData);
-        this.props.adminCreationAction.addEditAdmin(adminList);
-        this.props.history.push('/Admins');
+        event.preventDefault();
+            const formData = {},
+                adminList = this.props.adminList;
+            let isFormValid = true;
+
+            for (let i = 0; i < 9; i++) { //to do change to  each
+                if(formValidations(event.target[i].name, event.target[i].value) === false) {
+                    isFormValid = false;
+                }
+                formData[event.target[i].name] = event.target[i].value
+            }
+            this.setState({formValid: isFormValid} , () => {
+                if(this.state.formValid) {
+                adminList.push(formData);
+                this.props.adminCreationAction.addEditAdmin(adminList);
+                this.props.history.push('/Admins');
+                }
+            });
     }
    
     render() {
