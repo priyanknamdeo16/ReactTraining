@@ -12,10 +12,6 @@
   text-align: center;
 }
 
-.borderForm{
-  border: 1px solid gray;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -49,8 +45,7 @@
   color: white;
   font-size: 16px; 
   text-decoration: none;
-  margin: 15px;
-                          
+  margin: 15px;                    
 }
 .customerForm{
 
@@ -58,6 +53,12 @@
   border: 1px solid lightgray;
   font-weight: bold;
   font-size: 20px;
+  
+}
+.formHeading {
+  background: lightgray;
+  padding: 14px;
+  margin-bottom: 20px;
 }
 .datePickerClass {
   height: 20px;

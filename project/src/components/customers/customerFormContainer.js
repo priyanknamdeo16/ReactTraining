@@ -5,6 +5,7 @@ import * as userActionCreators from '../../actions/customersHandler';
 import { withRouter } from "react-router-dom";
 import CustomerFormComponent from './customerFormComponent';
 import customerslist from "../customerslist/customerslist";
+import formValidations from '../../utils/formValidations';
 
 class CustomerForm extends Component {
 
@@ -19,26 +20,44 @@ class CustomerForm extends Component {
       city: '',
       state: '',
       country: '',
-      mobile: ' '
+      mobile: '',
+      errors: {},
+      formValid : false
     };
 
 
     this.onSelection = this.onSelection.bind(this);
     this.saveCustomerDetails = this.saveCustomerDetails.bind(this);
+    //this.validateForm = this.validateForm.bind(this);
 
   }
 
+  // validateForm(){
+  //  let errors = {};
+  //   let formIsValid = true;
+  //   if(!this.state['domainName']){
+  //     formIsValid = false;
+  //     errors['domainName'] = 'Please enter domain name';
+  //   }
+  //   this.setState({
+  //     errors : errors
+  //   });
+  //   return formIsValid;
+  // }
+
+
   onSelection(event){
-    console.log(event.target.name);
     const field = event.target.name;
     this.setState({[field ]: event.target.value });
     if(this.props.selectedCustomer && this.props.selectedCustomer[field] !== event.target.value){
       this.props.selectedCustomer[field] = event.target.value;
     }
+
   }
 
-  saveCustomerDetails() {
-    const customer = {
+  saveCustomerDetails(event) {
+    const errorMessages = {};
+    const customerData = {
       customerType: this.state.customerType,
       domainName: this.state.domainName,
       name: this.state.name,
@@ -50,6 +69,8 @@ class CustomerForm extends Component {
       mobile: this.state.mobile,
     }
     const customersList = this.props.customers;
+    let isFormValid = true;
+
     if(this.props.selectedCustomer){
       for (let i = 0; i< customersList.length; i ++) {
         if(this.props.selectedCustomer.domainName === customersList[i].domainName) {
@@ -58,11 +79,28 @@ class CustomerForm extends Component {
       }
     }
     else{
-      customersList.push(customer);
+      for (let i = 0; i< 9; i ++) {
+      if(formValidations(event.target[i].name, event.target[i].value) === false) {
+        isFormValid = false;
+        errorMessages[event.target[i].name] = '*Invalid ' + event.target[i].name + '. Please Re-enter.'
     }
-  this.props.customerAction.addEditCustomer(customersList);
-  }
+    customerData[event.target[i].name] = event.target[i].value
+   }
+    }
+this.setState({formValid: isFormValid} , () => {
+    if(this.state.formValid) {
+      customersList.push(customerData);
+      this.props.customerAction.addEditCustomer(customersList);
+      this.props.history.push('/customers');
+    }
+    else {
+        this.setState({errors : errorMessages})
+    }
+});
+}
+
   render() {
+    let errors = this.state.errors;
     return (
       <CustomerFormComponent selectedCustomer ={this.props.selectedCustomer} onSaveDetails= {this.saveCustomerDetails} onSelection={this.onSelection}/>
     );

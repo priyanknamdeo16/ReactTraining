@@ -23,7 +23,7 @@ class ManageAdmin extends Component {
             stateInCountry: '',
             city: '',
             errors : {},
-            formValid : false,
+            formValid : false
             
         };
 
