@@ -1,3 +1,6 @@
+/**
+ * Main File to bootstrap app
+ */
 import React, { Component } from "react";
 import {Provider} from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
