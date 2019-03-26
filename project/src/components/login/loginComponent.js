@@ -8,12 +8,13 @@ import {Link, withRouter} from 'react-router-dom';
 const LoginComponent= (props) => {
     return (
       <div>
+        <form>
         <MuiThemeProvider>
           <div className="loginBox">
            <div className="loginHeader">Login</div>
-           <TextField required
+           <TextField
              hintText="Enter your Username"
-             floatingLabelText="Username"
+             floatingLabelText="Username" required
              onChange = {props.onSelectionUsername}
              />
            <br/>
@@ -21,13 +22,14 @@ const LoginComponent= (props) => {
                type="password"
                hintText="Enter your Password"
                floatingLabelText="Password"
-               onChange = {props.onSelectionPassword}
+               onChange = {props.onSelectionPassword} required
                />
              <br/>
              <button className="loginBtn" onClick={props.onLogin}>Login
             </button>
          </div>
          </MuiThemeProvider>
+         </form>
       </div>
     );
 }
