@@ -35,7 +35,9 @@ class Header extends Component{
                             component={Link} to={RouteConstants.CUSTOMERS_SETTINGS.path}
                             label={'Settings'}>
                        </Tab>
-                       <Tab
+                       <Tab>
+                       </Tab>
+                       <Tab className="tabWidth"
                             component={Link} to={RouteConstants.LOGIN.path} label={'LogOut'}>
                        </Tab>
                         </Tabs>

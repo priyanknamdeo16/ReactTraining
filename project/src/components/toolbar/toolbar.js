@@ -10,7 +10,7 @@ const ToolbarComponent = (props)=>{
             <AppBar position="static" color="default">
             <Toolbar>
                 <Button variant="outlined">
-                    <Link to={props.tabPath}>
+                    <Link style={{textDecoration: 'none'}}to={props.tabPath}>
                         {props.displayName}
                 </Link>
                 </Button>
