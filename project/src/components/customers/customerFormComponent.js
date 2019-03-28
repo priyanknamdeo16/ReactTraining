@@ -44,8 +44,8 @@ const CustomerFormComponent = (props) => {
               style={{ fontSize: 16, marginTop: 10, width: 250, height: 40 }} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.customerType : props.customerType}
               value={props.customerType} onChange={props.onSelection} required>
               <option value=""> Select Customer </option>
-              <option value="demo"> Demo</option>
-              <option value="premium"> Premium</option>
+              <option value="Demo"> Demo</option>
+              <option value="Premium"> Premium</option>
             </select>
           </Grid>
           <Grid item xs = {3}>
