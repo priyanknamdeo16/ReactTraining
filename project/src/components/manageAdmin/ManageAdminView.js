@@ -59,6 +59,12 @@ const Error = styled.span`
   float: left;
 `;
 
+const ButtonDiv = styled.div`
+  width: 30%;
+  float: right;
+  margin-top: 100px;
+`;
+
 const ManageAdminView = (props) => {
   return (
     <React.Fragment> 
@@ -124,12 +130,12 @@ const ManageAdminView = (props) => {
               <option>Kerala</option>
             </select>
           </Box>
-            <div> <br/> <br/>
+            <ButtonDiv> <br/> <br/>
               <Button type ='submit'>
                 Save</Button>
               <Button>
                 Cancel</Button>
-            </div>
+            </ButtonDiv>
           </Form>
         </Card>
       </React.Fragment>
