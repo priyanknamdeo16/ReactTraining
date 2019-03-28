@@ -13,7 +13,7 @@ const Form = styled.form`
 const Input = styled.input`
   background: #f1efef94;
   color: black;
-  margin: 5px 21px 50px 0px;
+  margin: 5px 15px 15px 0px;
   width: 70%;
   height: 40px;
   border: none;
@@ -23,6 +23,8 @@ const Input = styled.input`
 const Label = styled.label`
   display: inline-block;
   width: 70%;
+  font-size: 16px;
+  font-weight: bold;
 `;
 const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -47,9 +49,16 @@ margin: 25px;`;
 
 const Box = styled.div`
   display: inline-block;
-  margin-left: 10%;
+  margin-left: 6%;
+  margin-bottom: 20px;
   width: 25%
 `;
+const Error = styled.span`
+  width: 64%;
+  display: inline;
+  float: left;
+`;
+
 const ManageAdminView = (props) => {
   return (
     <React.Fragment> 
@@ -63,8 +72,8 @@ const ManageAdminView = (props) => {
           <Form onSubmit={props.onSaveAdmin}>
           <Box>
             <Label>First Name: </Label>
-            <Input  id="name1" name="name" type="text" value={props.name} placeholder="Name" required/>
-            <p style={{ width: '15%' , display: 'inline'}}>{props.errorData.name} </p>
+            <Input  id="name1" name="name" type="text" value={props.name} required/>
+            <Error>{props.errorData.name} </Error>
           </Box> 
           <Box>
             <Label>Last Name: </Label>
@@ -83,6 +92,7 @@ const ManageAdminView = (props) => {
           <Box>
             <Label>Email: </Label>
             <Input name="email" type="text" value={props.email} required/>
+            <Error>{props.errorData.email} </Error>
           </Box>
           <Box>
             <Label>Country: </Label>
