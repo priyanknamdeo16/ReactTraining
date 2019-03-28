@@ -5,7 +5,7 @@ import RoutesConstants from '../../constants/route.constants';
 // import ToolbarComponent from '../toolbar/toolbar';
 
 const Form = styled.form`
-  width: 80%;
+  width: 100%;
   height: 700px;
   margin: 20px;
   padding: 2px 16px;
@@ -13,51 +13,82 @@ const Form = styled.form`
 const Input = styled.input`
   background: #f1efef94;
   color: black;
-  margin: 20px 21px 50px 5px;
-  width: 15%;
-  height: 6%;
+  margin: 5px 21px 50px 0px;
+  width: 70%;
+  height: 40px;
   border: none;
   border-radius: 3px;
+  display: block;
 `;
 const Label = styled.label`
   display: inline-block;
-  width: 12%;
+  width: 70%;
 `;
 const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 80%;
+  width: 90%;
   margin: auto;
   border-radius: 5px;
 `;
 const Header = styled.h3`
-  text-align: center;
+  text-align: left;
   background: light grey;
 `;
+const Button = styled.button`
+background: gray;
+border-radius: 3px;
+border: none;
+width:100px;
+padding: 10px;
+color: white;
+font-size: 16px;
+margin: 25px;`;
 
+const Box = styled.div`
+  display: inline-block;
+  margin-left: 10%;
+  width: 25%
+`;
 const ManageAdminView = (props) => {
-   console.log('errr props>>>' , props);
   return (
     <React.Fragment> 
         <Card>
-        <Header align="center"><b>Manage Admin</b></Header>
+        <Header >
+          <div className="formHeading">
+          <label>Manage Admin</label>
+          </div>
+        </Header>
 
           <Form onSubmit={props.onSaveAdmin}>
+          <Box>
             <Label>First Name: </Label>
             <Input  id="name1" name="name" type="text" value={props.name} placeholder="Name" required/>
             <p style={{ width: '15%' , display: 'inline'}}>{props.errorData.name} </p>
+          </Box> 
+          <Box>
             <Label>Last Name: </Label>
             <Input  id="name2" name="lname" type="text" value={props.lname} required/>
             {/* <Label>Address:</Label>
             <Input id="add2" name="address" type="text" defaultValue={props.address}/> */}
+          </Box>
+          <Box>
             <Label>UserName: </Label>
             <Input name="userName" type="text" value={props.userName}/>
+          </Box>
+          <Box>
             <Label>ID: </Label>
             <Input name="id" type="text" value={props.id}/>
+          </Box>
+          <Box>
             <Label>Email: </Label>
             <Input name="email" type="text" value={props.email} required/>
+          </Box>
+          <Box>
             <Label>Country: </Label>
             <Input name="country" type="text" value={props.country}/>
+          </Box>
+          <Box>
             <Label>State: </Label>
             <select
               name="stateInCountry" value={props.stateInCountry} 
@@ -69,6 +100,8 @@ const ManageAdminView = (props) => {
               <option>Tamil Nadu</option>
               <option>Kerala</option>
             </select>
+          </Box>
+          <Box>
             <Label>City: </Label>
             <select
             name="city" value={props.city} 
@@ -80,11 +113,12 @@ const ManageAdminView = (props) => {
               <option>Tamil Nadu</option>
               <option>Kerala</option>
             </select>
+          </Box>
             <div> <br/> <br/>
-              <button type ='submit'>
-                Save</button>
-              <button>
-                Cancel</button>
+              <Button type ='submit'>
+                Save</Button>
+              <Button>
+                Cancel</Button>
             </div>
           </Form>
         </Card>
