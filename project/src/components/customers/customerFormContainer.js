@@ -56,6 +56,7 @@ class CustomerForm extends Component {
   }
 
   saveCustomerDetails(event) {
+    event.preventDefault();
     const errorMessages = {};
     const customerData = {
       customerType: this.state.customerType,
