@@ -15,7 +15,7 @@ import AddEditSettings from './addEditSettings';
 
 class SettingsComponent extends Component {
     componentDidMount() {
-        this.props.tabIndexChnage.tabChange(1);
+        this.props.tabIndexChnage.tabChange(2);
     }
     render() {
         return (

@@ -8,13 +8,7 @@ const Form = styled.form`
   margin: 20px;
   padding: 2px 16px;
 `;
-const Input = styled.input`
-height: 20px;
-width: 300px;
-border: 1px solid #000;
-margin-top: 29px;
-float: left;
-`;
+
 const InputRadioWrapper = styled.input`
 margin: 30px;
 float: left;
@@ -40,13 +34,23 @@ margin-right:15px;
 `;
 const Header = styled.h3`
   text-align: center;
-  background: light grey;
+  background: lightgray;
+  padding: 10px;
 `;
+const Input = styled.input`
+font-size: 16px;
+margin-top: 20px;
+width: 250px;
+height: 30px;`;
 const ActionButton = styled.button`
-padding: 8px;
-margin: 10px 10px 10px;
-width: 52px;
-`;
+background: gray;
+border-radius: 3px;
+border: none;
+width:100px;
+padding: 10px;
+color: white;
+font-size: 16px;
+margin: 25px;`;
 
 class AddEditSettings extends Component {
   render() {

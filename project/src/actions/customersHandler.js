@@ -1,36 +1,21 @@
 import Constants from '../constants/constants';
-import  data from '../customers.json';
+//import  data from '../customers.json';
 
 export const getCustomers = () => {
     return (dispatch, getState) => {
         setTimeout( () => {
-            const customers = data.customerList;
-            dispatch({
-                type: Constants.ON_CUSTOMERS_RECIEVED,
-                payload: customers
-            });
+            const customers = [];
+            fetch('http://localhost:3001/customerList')
+            .then(response => response.json())
+                 .then(customers => {
+                    dispatch({
+                        type: Constants.ON_CUSTOMERS_RECIEVED,
+                        payload: customers
+                    });
+                 })
         });
     };
 };
-
-// export const getCustomers = () => {
-//     return (dispatch, getState) => {
-//         // setTimeout( () => {
-//             let customers = [];
-//                 let url = "http://localhost:3001/customerList";
-
-//                 fetch(url)
-//                 .then(response => response.json())
-//                 .then(data => {
-//                   customers = data
-//                 })
-//             dispatch({
-//                 type: Constants.ON_CUSTOMERS_RECIEVED,
-//                 payload: customers
-//             });
-//         // });
-//     };
-// };
 
 export const onCustomersSelected = (customer) => {
     return (dispatch, getState) => {
