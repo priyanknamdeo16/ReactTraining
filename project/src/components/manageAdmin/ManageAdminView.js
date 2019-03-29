@@ -57,6 +57,7 @@ const Error = styled.span`
   width: 64%;
   display: inline;
   float: left;
+  color: red;
 `;
 
 const ButtonDiv = styled.div`

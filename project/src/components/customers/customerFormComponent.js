@@ -27,6 +27,12 @@ font-size: 16px;`;
 const Form = styled.form`
   margin: 20px;
 `;
+const Error = styled.span`
+  width: 64%;
+  display: inline;
+  float: left;
+  color: red;
+`;
 
 const CustomerFormComponent = (props) => {
     return(
@@ -55,6 +61,7 @@ const CustomerFormComponent = (props) => {
             <Input name="name"
               type="text" required defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.name : props.name} value={props.name} onChange={props.onSelection}
             />
+             <Error>{props.errorData.name} </Error>
           </Grid>
           <Grid item xs = {3}>
           <div>
@@ -63,7 +70,7 @@ const CustomerFormComponent = (props) => {
             <Input name="domain" 
               type="email"  required style={{ fontSize: 16, marginTop: 10, width: 250, height: 40 }}  name="domainName" defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.domainName : props.domainName} value={props.domainName} onChange={props.onSelection}
             />
-            <div>{props.errors}</div>
+            <Error>{props.errorData.domainName}</Error>
           </Grid>
         </Grid>
         <Grid container spacing={24} style={{ marginLeft: '10%' , padding: 10}}>
@@ -74,6 +81,7 @@ const CustomerFormComponent = (props) => {
             <Input
               type="text" required name="address1" defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.address1 : props.address1} value={props.address1} onChange={props.onSelection}
             />
+             <Error>{props.errorData.address1} </Error>
           </Grid>
           <Grid item xs = {3}>
           <div>
@@ -82,6 +90,7 @@ const CustomerFormComponent = (props) => {
             <Input
               type="text" name="address2" defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.address2 : props.address2} value={props.address2} onChange={props.onSelection}
             />
+             <Error>{props.errorData.address2} </Error>
           </Grid>
           <Grid item xs = {3}>
           <div>
@@ -90,12 +99,14 @@ const CustomerFormComponent = (props) => {
             <Input
               type="text" required name="city" value={props.city} onChange={props.onSelection} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.city : props.city}
             />
+             <Error>{props.errorData.city} </Error>
           </Grid>
         </Grid>
         <Grid container spacing={24} style={{ marginLeft: '10%' , padding: 10}}>
           <Grid item xs = {3}>
           <div>
             <Label>State: </Label>
+            <Error>{props.errorData.state} </Error>
             </div>
             <select
               name="state" required value={props.state} onChange={props.onSelection} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.state : props.state}
@@ -113,14 +124,16 @@ const CustomerFormComponent = (props) => {
             <Input
               type="text" required name="country" value={props.country} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.country : props.country} onChange={props.onSelection}
             />
+             <Error>{props.errorData.country} </Error>
           </Grid>
           <Grid item xs = {3}>
           <div>
             <Label>Mobile: </Label>
             </div>
             <Input
-              type="phone" required name="mobile" value={props.mobile} onChange={props.onSelection} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.mobile : props.mobile}
+              type="text" required name="mobile" value={props.mobile} onChange={props.onSelection} defaultValue= {(props.selectedCustomer) ? props.selectedCustomer.mobile : props.mobile}
             />
+             <Error>{props.errorData.mobile} </Error>
           </Grid>
         </Grid>
         <div style={{ marginTop: 30 ,}} />

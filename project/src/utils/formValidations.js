@@ -9,8 +9,16 @@ const formValidations = (type, val) => {
           return true;
       }
   }
-  if(type === 'name' || type === 'address1' || type === 'country' || type === 'state' || type === 'city') {
+  if(type === 'name' || type === 'address1' || type === 'address2' || type === 'country' || type === 'state' || type === 'city') {
     if(val.match(/^[a-zA-Z ]*$/)) {
+        return true;
+    }
+    else {
+         return false;
+    }
+  }
+  if(type === 'mobile') {
+    if(val.match(/^[0-9]*$/)) {
         return true;
     }
     else {

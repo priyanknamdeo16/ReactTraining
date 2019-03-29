@@ -28,22 +28,7 @@ class CustomerForm extends Component {
 
     this.onSelection = this.onSelection.bind(this);
     this.saveCustomerDetails = this.saveCustomerDetails.bind(this);
-    //this.validateForm = this.validateForm.bind(this);
-
   }
-
-  // validateForm(){
-  //  let errors = {};
-  //   let formIsValid = true;
-  //   if(!this.state['domainName']){
-  //     formIsValid = false;
-  //     errors['domainName'] = 'Please enter domain name';
-  //   }
-  //   this.setState({
-  //     errors : errors
-  //   });
-  //   return formIsValid;
-  // }
 
 
   onSelection(event){
@@ -79,7 +64,7 @@ class CustomerForm extends Component {
         }
       }
     }
-    else{
+    // else{
       for (let i = 0; i< 9; i ++) {
       if(formValidations(event.target[i].name, event.target[i].value) === false) {
         isFormValid = false;
@@ -87,10 +72,12 @@ class CustomerForm extends Component {
     }
     customerData[event.target[i].name] = event.target[i].value
    }
-    }
+    //}
 this.setState({formValid: isFormValid} , () => {
     if(this.state.formValid) {
-      customersList.push(customerData);
+      if(!this.props.selectedCustomer){
+        customersList.push(customerData);
+      }
       this.props.customerAction.addEditCustomer(customersList);
       this.props.history.push('/customers');
     }
@@ -103,7 +90,7 @@ this.setState({formValid: isFormValid} , () => {
   render() {
     let errors = this.state.errors;
     return (
-      <CustomerFormComponent selectedCustomer ={this.props.selectedCustomer} onSaveDetails= {this.saveCustomerDetails} onSelection={this.onSelection}/>
+      <CustomerFormComponent selectedCustomer ={this.props.selectedCustomer} onSaveDetails= {this.saveCustomerDetails}   errorData = {this.state.errors} onSelection={this.onSelection}/>
     );
   }
 }
